@@ -36,12 +36,13 @@ git clone https://github.com/immortalwrt/luci-app-unblockneteasemusic package/lu
 git clone https://github.com/jerrykuku/lua-maxminddb.git package/lua-maxminddb
 svn co https://github.com/vernesong/OpenClash/trunk/luci-app-openclash package/luci-app-openclash
 git clone https://github.com/project-lede/luci-app-godproxy package/luci-app-godproxy
-svn co https://github.com/openwrt/luci/trunk/modules/luci-mod-dashboard feeds/luci/modules/luci-mod-dashboard
+#svn co https://github.com/openwrt/luci/trunk/modules/luci-mod-dashboard feeds/luci/modules/luci-mod-dashboard
 #svn co https://github.com/openwrt/packages/trunk/net/openssh package/openssh
 #svn co https://github.com/openwrt/packages/trunk/libs/libfido2 package/libfido2
 #svn co https://github.com/openwrt/packages/trunk/libs/libcbor package/libcbor
 svn co https://github.com/ophub/luci-app-amlogic/trunk/luci-app-amlogic package/luci-app-amlogic
 #svn co https://github.com/breakings/OpenWrt/trunk/general/luci-app-cpufreq package/luci-app-cpufreq
+svn co https://github.com/Lienol/openwrt-package/trunk/luci-app-socat package/luci-app-socat
 
 # 编译 po2lmo (如果有po2lmo可跳过)
 pushd package/luci-app-openclash/tools/po2lmo
@@ -112,7 +113,7 @@ svn co https://github.com/rosywrt/luci-theme-rosy/trunk/luci-theme-rosy package/
 #git clone https://github.com/rosywrt/luci-theme-purple.git package/luci-theme-purple
 git clone https://github.com/Leo-Jo-My/luci-theme-opentomcat.git package/luci-theme-opentomcat
 svn co https://github.com/Leo-Jo-My/luci-theme-opentomato/trunk package/luci-theme-opentomato
-git clone https://github.com/kevin-morgan/luci-theme-argon-dark.git package/luci-theme-argon-dark
+#git clone https://github.com/kevin-morgan/luci-theme-argon-dark.git package/luci-theme-argon-dark
 #svn co https://github.com/openwrt/luci/trunk/themes/luci-theme-openwrt-2020 package/luci-theme-openwrt-2020
 
 # fix nginx-ssl-util error (do not use fallthrough attribute)
@@ -131,6 +132,9 @@ git clone https://github.com/kevin-morgan/luci-theme-argon-dark.git package/luci
 #删除docker无脑初始化教程
 #sed -i '31,39d' package/lean/luci-app-docker/po/zh-cn/docker.po
 #rm -rf lean/luci-app-docker/root/www
+
+#fix NaïveProxy type error
+sed -i 's/Na茂veProxy/NaïveProxy/g' package/naiveproxy/Makefile
 
 #fix speedtest-cli
 sed -i "s/PKG_VERSION:=.*/PKG_VERSION:=2.1.3/" feeds/packages/lang/python/python3-speedtest-cli/Makefile
