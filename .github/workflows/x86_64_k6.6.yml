@@ -73,7 +73,7 @@ jobs:
         sudo swapoff -a
         sudo rm -f /swapfile /mnt/swapfile
         sudo -E apt update
-        sudo -E apt -y install $(curl -fsSL https://is.gd/depends_ubuntu_2204)
+        sudo -E apt -y install $(curl -fsSL https://tinyurl.com/ubuntu2204-make-openwrt)
         sudo -E apt -y install clang llvm lld
         sudo -E apt -y autoremove --purge
         sudo -E systemctl daemon-reload
