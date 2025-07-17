@@ -31,7 +31,7 @@ env:
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: false
   UPLOAD_RELEASE: true
-  TZ: Asia/Shanghai
+  TZ: Asia/Jakarta
   FILE_NAME: x86_64_k6.6
   PRODUCT_NAME: x86_64
 
